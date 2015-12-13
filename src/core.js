@@ -43,3 +43,5 @@ export function upvote(state, entry) {
     tally => tally + 1
   );
 }
+
+export const INITIAL_STATE = new Map();
