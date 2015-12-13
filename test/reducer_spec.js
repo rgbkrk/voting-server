@@ -1,3 +1,4 @@
+/* eslint no-undefined: 0 */
 import { Map, fromJS } from 'immutable';
 import { expect } from 'chai';
 
