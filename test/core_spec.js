@@ -103,45 +103,33 @@ describe('application logic', () => {
   describe('upvote', () => {
     it('creates a tally for the voted entry', () => {
       const state = new Map({
-        vote: new Map({
-          pair: List.of('Trainspotting', '28 Days Later'),
-        }),
-        entries: new List(),
+        pair: List.of('Trainspotting', '28 Days Later'),
       });
       const nextState = upvote(state, 'Trainspotting');
       expect(nextState).to.equal(new Map({
-        vote: new Map({
-          pair: List.of('Trainspotting', '28 Days Later'),
-          tally: new Map({
-            'Trainspotting': 1,
-          }),
+        pair: List.of('Trainspotting', '28 Days Later'),
+        tally: new Map({
+          'Trainspotting': 1,
         }),
-        entries: new List(),
       }));
     });
 
     it('adds to existing tally for the voted entry', () => {
       const state = new Map({
-        vote: new Map({
-          pair: List.of('Trainspotting', '28 Days Later'),
-          tally: new Map({
-            'Trainspotting': 3,
-            '28 Days Later': 2,
-          }),
+        pair: List.of('Trainspotting', '28 Days Later'),
+        tally: new Map({
+          'Trainspotting': 3,
+          '28 Days Later': 2,
         }),
-        entries: new List(),
       });
 
       const nextState = upvote(state, 'Trainspotting');
       expect(nextState).to.equal(new Map({
-        vote: new Map({
-          pair: List.of('Trainspotting', '28 Days Later'),
-          tally: new Map({
-            'Trainspotting': 4,
-            '28 Days Later': 2,
-          }),
+        pair: List.of('Trainspotting', '28 Days Later'),
+        tally: new Map({
+          'Trainspotting': 4,
+          '28 Days Later': 2,
         }),
-        entries: new List(),
       }));
     });
   });
