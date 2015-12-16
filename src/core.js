@@ -36,7 +36,7 @@ export function next(state) {
   });
 }
 
-export function upvote(voteState, entry) {
+export function vote(voteState, entry) {
   return voteState.updateIn(
     ['tally', entry],
     0,

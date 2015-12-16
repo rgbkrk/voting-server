@@ -1,4 +1,4 @@
-import { setEntries, next, upvote, INITIAL_STATE } from './core';
+import { setEntries, next, vote, INITIAL_STATE } from './core';
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -6,9 +6,9 @@ export default function reducer(state = INITIAL_STATE, action) {
     return setEntries(state, action.entries);
   case 'NEXT':
     return next(state);
-  case 'UPVOTE':
+  case 'VOTE':
     return state.update('vote',
-                        voteState => upvote(voteState, action.entry));
+                        voteState => vote(voteState, action.entry));
   }
   return state;
 }
